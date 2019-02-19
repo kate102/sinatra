@@ -1,9 +1,19 @@
 <%# Comment style is a red dashed border %> 
 <%# the img src is a pic of a cat, it could be any picture %>
 
+
+<%# So, when you click the submit button, your browser: %>
+<%# Constructs a request to the path specified in the action attribute of the form tag %>
+<%# Constructs a query string depending on the inputs within the form, and appends this to the request %>
+<%# Sends the request to the server. %>
+
 <% if @name %>
-<h1>My name is <%= @name %></h>
+<h1>My name is <%= @name %></h1>
 <% end %>
+<form action="/named-cat">
+  <input type="text" name="name">
+  <input type="submit" value="Submit">
+</form>
 <div style='border: 3px dashed red'>
    <img src='http://bit.ly/1eze8aE'>
  </div>
