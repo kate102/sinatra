@@ -11,6 +11,8 @@ end
 
 # Views
 # Strip out the html and but in embedded ruby file
+# Move the processing in here and not in the view
 get '/cat' do
-  erb(:index)
+  @name = ["Janet", "John"].sample
+  erb :index
 end
