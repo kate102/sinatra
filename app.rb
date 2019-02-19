@@ -16,3 +16,18 @@ get '/cat' do
   @name = ["Janet", "John"].sample
   erb :index
 end
+
+# Rename cat to random-cat
+get '/random-cat' do
+  @name = ["Janet", "John"].sample
+  erb :index
+end
+
+# Add named-cat add ?name=Kitty and the name is set to Kitty
+# Note not quote marks!
+get '/named-cat' do
+  p params[:name]
+  @name = params[:name]
+  erb :index
+end
+
