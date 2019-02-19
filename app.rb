@@ -25,8 +25,16 @@ end
 
 # Add named-cat add ?name=Kitty and the name is set to Kitty
 # Note not quote marks!
-get '/named-cat' do
-  p params[:name]
+# Changed it to POST from GET
+# Separate out the form and the display functionality
+# in app.rb
+# first, let's write a form-displaying route
+get '/cat-form' do
+  erb :cat_form
+end
+
+post '/named-cat' do
+  p params
   @name = params[:name]
   erb :index
 end
